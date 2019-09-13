@@ -31,7 +31,7 @@ for i in range(6500):
 
 model = Sequential()
 model.add(Dense(50, input_dim=pixels, activation='relu'))
-for i in range (9):
+for i in range(9):
     model.add(Dense(50, activation='relu'))
 model.add(Dense(10, activation='softmax'))
 

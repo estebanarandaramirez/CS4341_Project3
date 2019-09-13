@@ -56,7 +56,7 @@ if __name__ == "__main__":
     second_output_csv = sys.argv[3] # Same here
 
     # Now we want to open the *.csv file.
-    inputcsv = open(first_input_csv, 'r') # This is means we are openning a file and then editing it.
+    inputcsv = open(first_input_csv, 'r') # This is means we are opening a file and then editing it.
     # 'rb' is for python2. 'r' is python 3
     inputreader = csv.reader(inputcsv) # Now we can read the file that was opened by python
 

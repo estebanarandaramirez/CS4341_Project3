@@ -1,0 +1,14 @@
+Listing some features that would be useful.
+
+Required:
+    Bottom left corner
+    More pieces in center column.
+
+Useful:
+    Who has more pieces in columns 3&5 (ie right and left of center)
+    Contrast center column with far right and left columns.
+    Grab a couple other single spots so we have data to contrast with the bottom left corner
+
+If time:
+    Who has more pieces in the center three spots of all rows
+    Check top and bottom center 3x3 boxes
