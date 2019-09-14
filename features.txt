@@ -1,3 +1,19 @@
+Array of 10 features.
+0. winner of both center spots
+1. bottom left corner
+2. winner of center column
+3. winner left-center column
+4. winner of right-center column
+5. winner of bottom row
+6. winner of all three center columns
+7. winner of center and one other column
+8. center bottom piece - no true center
+9. center top piece - no true center
+
+1 rep player 1,
+2 rep player 2,
+0 rep neither.
+
 Listing some features that would be useful.
 
 Required:
@@ -6,7 +22,8 @@ Required:
 
 Useful:
     Who has more pieces in columns 3&5 (ie right and left of center)
-    Contrast center column with far right and left columns.
+    bottom row
+    #Contrast center column with far right and left columns.
     Grab a couple other single spots so we have data to contrast with the bottom left corner
 
 If time:
