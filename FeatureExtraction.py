@@ -2,6 +2,7 @@ import sys
 import numpy as np
 
 # can run in command line with these arguments: python3 FeatureExtraction.py trainDataSet.csv dummy.csv
+from numpy.core._multiarray_umath import ndarray
 
 if len(sys.argv) != 3:
     sys.exit("Must specify input and output files")
@@ -98,6 +99,32 @@ def feature7(r):   # center piece top
     return str(r[3+7*4])
 
 
+def feature8(r):
+    player1 = 0
+    player2 = 0
+    for i in r:
+        i = int(i)
+        if r[i + 2] == '1':
+            player1 += 1
+        if r[i + 2] == '2':
+            player2 += 1
+        if r[i + 3] == '1':
+            player1 += 1
+        if r[i + 3] == '2':
+            player2 += 1
+        if r[i + 4] == '1':
+            player1 += 1
+        if r[i + 4] == '2':
+            player2 += 1
+        i += 7
+    if player1 > player2:
+        return '1'
+    if player2 > player1:
+        return '2'
+    else:
+        return '0'
+
+
 j = 0  # j is equal to index of current row
 for row in loadInput:    # actual function here to put features into array
     output[j, 1] = feature1(row)
@@ -105,10 +132,9 @@ for row in loadInput:    # actual function here to put features into array
     output[j, 3] = feature3(row)
     output[j, 4] = feature4(row)
     output[j, 5] = feature5(row)
-    if output[j, 3] == output[j, 4] == output[j, 2]:  # control all three center columns
-        output[j, 6] = output[j, 3]
-    if output[j, 3] == output[j, 4] or output[j, 3] == output [j, 5]:
-        output[j, 7] == output[j, 3]
+    output[j, 6] = feature8(row)  # control all three center columns
+    if output[j, 3] == output[j, 4] or output[j, 3] == output[j, 5]:  # control center and neighbor column
+        output[j, 7] = output[j, 3]
     output[j, 8] = feature6(row)
     output[j, 9] = feature7(row)
     if output[j, 8] == output[j, 9]:  # control both center pieces in middle column

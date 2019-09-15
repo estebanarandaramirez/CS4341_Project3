@@ -5,7 +5,7 @@ Array of 10 features.
 3. winner left-center column
 4. winner of right-center column
 5. winner of bottom row
-6. winner of all three center columns
+6. overall winner of three center columns
 7. winner of center and one other column
 8. center bottom piece - no true center
 9. center top piece - no true center
