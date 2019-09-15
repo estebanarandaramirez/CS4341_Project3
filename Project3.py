@@ -4,6 +4,7 @@ import pandas as pd
 import numpy as np
 from FeatureExtraction import  getFeatures
 from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split, cross_val_score, cross_validate, KFold
 from sklearn import metrics
 
@@ -27,6 +28,21 @@ def DecisionTree(X, Y, i):
     print("Mean(+/-Standard Deviation): %.2f%% (+/- %.2f%%)" % (np.mean(cvscores), np.std(cvscores)))
     print("Final test accuracy:", metrics.accuracy_score(Y[test], Y_pred) * 100)
 
+
+def RandomForest(X, Y, i):
+    rTree = RandomForestClassifier(criterion='entropy', n_estimators=10)
+    kfold = KFold(n_splits=10, shuffle=True, random_state=seed)
+    cvscores = []
+    i = 1
+    for train, test in kfold.split(X, Y):
+        rTree = rTree.fit(X[train], Y[train].ravel())
+        Y_pred = rTree.predict(X[test])
+        cvscores.append(metrics.accuracy_score(Y[test], Y_pred) * 100)
+        i += 1
+    print("Mean(+/-Standard Deviation): %.2f%% (+/- %.2f%%)" % (np.mean(cvscores), np.std(cvscores)))
+    print("Final test accuracy:", metrics.accuracy_score(Y[test], Y_pred) * 100)
+
+
 if len(sys.argv) != 3:
     sys.exit("Must specify input and output files")
 firstInputCSV = sys.argv[1]
@@ -40,7 +56,7 @@ Y = features[10].values.reshape(-1, 1)
 for i in range (10):
     X = features[i].values.reshape(-1, 1)
     print("Feature #%i" % (i+1))
-    DecisionTree(X, Y, i)
+    RandomForest(X, Y, i)
 
 # outputFilePath = "./" + str(secondInputCSV)
 # with open(outputFilePath, 'w', newline='') as outputFile:
