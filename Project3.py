@@ -71,11 +71,11 @@ for i in range (10):
     X = features[i].values.reshape(-1, 1)
     with open('DTresults.csv', 'a', newline='') as file:
         writer = csv.writer(file)
-        writer.writerow(['Feature %i:' % (i+1)])
+        writer.writerow(['Feature %i:' % (i)])
     with open('RFresults.csv', 'a', newline='') as file:
         writer = csv.writer(file)
-        writer.writerow(['Feature %i:' % (i+1)])
-    print("Feature #%i:" % (i+1))
+        writer.writerow(['Feature %i:' % (i)])
+    print("Feature #%i:" % (i))
     DecisionTree(X, Y)
     RandomForest(X, Y)
 
@@ -100,10 +100,10 @@ for i in range (10):
     X = features[i].values.reshape(-1, 1)
     with open('DTresults.csv', 'a', newline='') as file:
         writer = csv.writer(file)
-        writer.writerow(['All except %i:' % (i+1)])
+        writer.writerow(['All except %i:' % (i)])
     with open('RFresults.csv', 'a', newline='') as file:
         writer = csv.writer(file)
-        writer.writerow(['All except %i:' % (i+1)])
-    print("All features except #%i:" % (i+1))
+        writer.writerow(['All except %i:' % (i)])
+    print("All features except #%i:" % (i))
     DecisionTree(X, Y)
     RandomForest(X, Y)

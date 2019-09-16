@@ -8,3 +8,5 @@ The second CSV will be rewritten with board states and evaluation of the feature
 
 If interested, FeatureExtraction.py can be run with the board states as csv1 input with any csv as a second input.
 It will generate a new csv called features.csv that will just list the results of each feature across each row.
+
+The features.txt file explains the features in more depth.
