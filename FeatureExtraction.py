@@ -142,4 +142,3 @@ def getFeatures(loadInput):
 
     np.savetxt('features.csv', output, delimiter=",", fmt="%1i")
     return pd.read_csv('features.csv', dtype='int', header=None)
-    # return np.loadtxt('features.csv', delimiter=',', dtype='int')
