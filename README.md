@@ -2,11 +2,18 @@
 ## Lisa Spalding & Esteban Aranda
 ## 09/15/19
 
-To run this project, Project3.py can be run with two csvs as parameter.
-The first CSV should be board states with winner
-The second CSV will be rewritten with board states and evaluation of the features.
+To run this project open the terminal window and cd to the correct directory.
+To run type 'python Project3.py [input].csv [output].csv' where 'input' has to be
+a specified csv file inside the directory with the data to analyze and 'output'
+will be the name of the file where the actual result of the matches that were used
+as test will be printed first and then the predictions from the Decision Tree
+in the order that they were computed in.
 
-If interested, FeatureExtraction.py can be run with the board states as csv1 input with any csv as a second input.
-It will generate a new csv called features.csv that will just list the results of each feature across each row.
-
-The features.txt file explains the features in more depth.
+Project3.py calls FeatureExtraction.py to obtain all the specified features
+(which one can read about in 'features.txt' and in the report),
+which are printed to 'features.csv', and then contains a Decision Tree and
+Random Forest with 10-fold cross validation to predict the outcome of the
+Connect-4 games. Both, the Decision Tree and the Random Forest are called
+with all individual inputs, all features, and all features except one at a time.
+All the data from both are printed in the terminal and additionally in csv
+files named 'DTresults.csv' and 'RFresults.csv' respectively.
