@@ -2,11 +2,12 @@ import csv
 import sys
 import pandas as pd
 import numpy as np
-from FeatureExtraction import  getFeatures
+from FeatureExtraction import getFeatures
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import KFold
 from sklearn import metrics
+
 
 def DecisionTree(X, Y):
     decisionTree = DecisionTreeClassifier(criterion='entropy')
